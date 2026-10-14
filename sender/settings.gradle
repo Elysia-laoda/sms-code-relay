@@ -1,0 +1,22 @@
+// 先走国内镜像，再回落到官方源：首次出包要补 AGP 9 自带的 Kotlin 插件依赖，
+// 之后全部落在 ~/.gradle/caches 里，可以 --offline 重出包。
+pluginManagement {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "sms-relay"
+include ':app'

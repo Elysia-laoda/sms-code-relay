@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:text="副卡短信转发 · 主端（接收）"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F1F3F5"
+            android:fontFamily="monospace"
+            android:padding="8dp"
+            android:textSize="12sp"
+            android:text="读取中…" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPerms"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="① 短信权限" />
+
+            <Button
+                android:id="@+id/btnOverlayPerm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="② 悬浮窗权限" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnBattery"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="③ 电池白名单" />
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="启动服务" />
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="停止服务" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCopyLatest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="复制最新验证码"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自测：造一条假的验证码（验通知与悬浮窗）" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="设置"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etPort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="局域网监听端口（默认 8788）"
+            android:inputType="number"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/etToken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="共享口令（可选；副端要填同一个）"
+            android:inputType="text"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/etPrefix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="转发短信前缀（默认 [转发]）"
+            android:inputType="text"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/etMailUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="邮箱通道：邮箱地址（如 123456@qq.com）"
+            android:inputType="textEmailAddress"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/etMailPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="邮箱通道：POP3 授权码"
+            android:inputType="textPassword"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etMailInterval"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="轮询间隔秒"
+                android:inputType="number"
+                android:textSize="13sp" />
+
+            <Switch
+                android:id="@+id/swMail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="邮箱轮询" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnMailNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="立即收一次邮件（自测邮箱通道）" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etHideSec"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="悬浮窗自动消失秒数"
+                android:inputType="number"
+                android:textSize="13sp" />
+
+            <Switch
+                android:id="@+id/swOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="悬浮窗" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="保存设置" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="收到的验证码（最近 20 条）"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/llRecords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnRefresh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="刷新" />
+
+            <Button
+                android:id="@+id/btnClearRecords"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="清空记录" />
+
+            <Button
+                android:id="@+id/btnClearLogs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="清空日志" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F7F7F7"
+            android:fontFamily="monospace"
+            android:padding="8dp"
+            android:textSize="11sp"
+            android:text="（暂无日志）" />
+    </LinearLayout>
+</ScrollView>

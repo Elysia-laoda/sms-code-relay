@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 只存在于 debug 构型：让整条链路能被 adb 脚本化驱动。release 包里没有这两个接收器。 -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <receiver
+            android:name=".DebugInjectReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.elysia.smsrecv.DEBUG_SMS" />
+                <action android:name="com.elysia.smsrecv.DEBUG_HTTP" />
+                <action android:name="com.elysia.smsrecv.DEBUG_TEST" />
+                <action android:name="com.elysia.smsrecv.DEBUG_CONFIG" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

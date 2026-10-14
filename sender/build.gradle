@@ -1,0 +1,5 @@
+// AGP 版本取本机已缓存的那一个（Gradle 9.5.0 + AGP 9.3.1）。
+// AGP 9 自带 Kotlin 编译，工程里不需要再单独应用 kotlin-android 插件。
+plugins {
+    id 'com.android.application' version '9.3.1' apply false
+}

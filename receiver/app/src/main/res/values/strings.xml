@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">验证码接收</string>
+    <string name="notif_channel_code">验证码</string>
+    <string name="notif_channel_service">接收服务</string>
+</resources>

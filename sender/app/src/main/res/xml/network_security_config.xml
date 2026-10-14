@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  允许明文 HTTP：本 App 的两条主用通道都是自己人之间的链路——
+  ① 局域网直推（手机 → 家里的接收端 IP）；② adb reverse 到开发机的 127.0.0.1。
+  走公网第三方通道时请在设置里填 https:// 地址（App 不做强制，判断权留给使用者）。
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>

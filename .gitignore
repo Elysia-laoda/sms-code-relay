@@ -1,0 +1,23 @@
+# 构建产物
+build/
+.gradle/
+.kotlin/
+.idea/
+*.iml
+
+# 本机路径（各自生成，不入库）
+local.properties
+
+# 签名材料：口令只放本机 properties，绝不进仓库
+*.jks
+*.keystore
+*-release.properties
+keystore.properties
+
+# 运行期与联调留下的东西（可能含真实号码、验证码、邮箱）
+_test/
+_shots/
+docs/验收截图*.png
+
+# 交付包走 Release 附件，不进 git
+dist/

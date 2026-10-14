@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  只在 debug 构型里存在：两个可以从 adb 直接打进去的广播入口，
+  用来在不碰手机界面的前提下喂测试短信、改通道配置。release 包里没有这个文件，也没有这两个接收器。
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <receiver
+            android:name=".DebugInjectReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.elysia.smsrelay.DEBUG_INJECT" />
+                <action android:name="com.elysia.smsrelay.DEBUG_CONFIG" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
